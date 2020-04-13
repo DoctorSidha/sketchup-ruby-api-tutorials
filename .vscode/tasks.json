@@ -4,13 +4,35 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Debug in SketchUp 2018",
+      "label": "Debug StartUp in SketchUp 2019",
       "type": "shell",
       "command": "skippy",
+      "windows": {
+        "command": "C:/Program Files/SketchUp/SketchUp 2019/SketchUp.exe"
+      },
       "args": [
-        "sketchup:debug",
-        "2018"
+        "-rdebug",
+        "ide port=7000 wait", //with "wait" argument, to debug start-up scripts. 
+                              //See https://github.com/SketchUp/sketchup-ruby-debugger 
+                              //for detailed information
+
       ],
+      
+      "problemMatcher": []
+    },
+    {
+      "label": "Debug in SketchUp 2019",
+      "type": "shell",
+      "command": "skippy",
+      "windows": {
+        "command": "C:/Program Files/SketchUp/SketchUp 2019/SketchUp.exe"
+      },
+      "args": [
+        "-rdebug",
+        "ide port=7000", 
+
+      ],
+      
       "problemMatcher": []
     }
   ]
